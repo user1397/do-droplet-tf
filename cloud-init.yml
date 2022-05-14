@@ -1,0 +1,32 @@
+#cloud-config
+
+# Note: This has only been tested on Ubuntu/Debian
+
+# Update system
+package_upgrade: true
+
+# Install packages
+packages:
+  - zip
+  - unzip
+  
+# Create sudo user
+# Note: Change username as desired
+users:
+  - name: adminuser
+    shell: /bin/bash
+    sudo: ALL=(ALL) NOPASSWD:ALL
+
+# Setup ssh key access for sudo user
+# Secure sshd config
+# Note: Change ssh port number as desired. If you change it here,
+# you'll also have to change it in variables.tf
+runcmd:
+  - mkdir -p /home/adminuser/.ssh
+  - mv /root/.ssh/authorized_keys /home/adminuser/.ssh/
+  - chown -R adminuser:adminuser /home/adminuser/.ssh
+  - sed -i 's/#Port 22/Port 55022/g' /etc/ssh/sshd_config
+  - sed -i 's/PermitRootLogin yes/PermitRootLogin no/g' /etc/ssh/sshd_config
+  - sed -i 's/PasswordAuthentication yes/PasswordAuthentication no/g' /etc/ssh/sshd_config
+  - sed -i 's/X11Forwarding yes/X11Forwarding no/g' /etc/ssh/sshd_config
+  - systemctl restart sshd

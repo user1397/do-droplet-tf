@@ -14,7 +14,7 @@ The default SSH port is also changed, and the OS packages should be fully up to 
 I intentionally chose the cheapest droplet ($5/month) as a starting point, feel free to change the droplet size to whatever you want (see Helpful Stuff at the bottom).
 
 ## Prereqs
-0. This guide works on Linux/MacOS/Windows (either with Git Bash or WSL). It may work fine on Windows with powershell, but will possibly require some tweaks.
+0. This guide works on Linux/MacOS/Windows (either with Git Bash or WSL).
 1. Create a [DO account](https://cloud.digitalocean.com/registrations/new)
 2. Create a [Personal Access Token (PAT)](https://docs.digitalocean.com/reference/api/create-personal-access-token/) and store it somewhere safe
 3. Create a local ssh key pair (defaults are fine):

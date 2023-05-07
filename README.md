@@ -1,4 +1,4 @@
-# dev-sandbox-starter-pack
+# simple-vm
 
 "As a developer, I want to be able to quickly stand up and tear down a Linux server with some sane defaults/basic security so that I can have a reasonably secure sandbox to play around in and get on with my projects."
 

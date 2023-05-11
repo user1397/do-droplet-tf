@@ -13,7 +13,7 @@ packages:
 # Create sudo user
 # Note: Change username as desired
 users:
-  - name: adminuser
+  - name: yoloadmin
     shell: /bin/bash
     sudo: ALL=(ALL) NOPASSWD:ALL
 
@@ -22,9 +22,9 @@ users:
 # Note: Change ssh port number as desired. If you change it here,
 # you'll also have to change it in variables.tf
 runcmd:
-  - mkdir -p /home/adminuser/.ssh
-  - mv /root/.ssh/authorized_keys /home/adminuser/.ssh/
-  - chown -R adminuser:adminuser /home/adminuser/.ssh
+  - mkdir -p /home/yoloadmin/.ssh
+  - mv /root/.ssh/authorized_keys /home/yoloadmin/.ssh/
+  - chown -R yoloadmin:yoloadmin /home/yoloadmin/.ssh
   - sed -i 's/#Port 22/Port 55022/g' /etc/ssh/sshd_config
   - sed -i 's/PermitRootLogin yes/PermitRootLogin no/g' /etc/ssh/sshd_config
   - sed -i 's/PasswordAuthentication yes/PasswordAuthentication no/g' /etc/ssh/sshd_config

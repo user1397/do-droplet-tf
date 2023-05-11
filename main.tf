@@ -51,11 +51,11 @@ resource "digitalocean_firewall" "firewall" {
   inbound_rule {
     protocol              = "tcp"
     port_range            = var.ssh_port
-    source_addresses      = [ "${data.http.my_ip.request_body}/32" ]
+    source_addresses      = [ "${data.http.my_ip.response_body}/32" ]
   }
   inbound_rule {
     protocol              = "icmp"
-    source_addresses      = [ "${data.http.my_ip.request_body}/32" ]
+    source_addresses      = [ "${data.http.my_ip.response_body}/32" ]
   }
   outbound_rule {
     protocol              = "tcp"

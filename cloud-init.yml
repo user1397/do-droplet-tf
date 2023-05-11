@@ -1,14 +1,6 @@
 #cloud-config
 
 # Note: This has only been tested on Ubuntu/Debian
-
-# Update system
-package_upgrade: true
-
-# Install packages
-packages:
-  - zip
-  - unzip
   
 # Create sudo user
 # Note: Change username as desired
@@ -30,3 +22,11 @@ runcmd:
   - sed -i 's/PasswordAuthentication yes/PasswordAuthentication no/g' /etc/ssh/sshd_config
   - sed -i 's/X11Forwarding yes/X11Forwarding no/g' /etc/ssh/sshd_config
   - systemctl restart sshd
+
+# Update system
+package_upgrade: true
+
+# Install extra packages
+packages:
+  - zip
+  - unzip

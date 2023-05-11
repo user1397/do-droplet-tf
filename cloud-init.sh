@@ -27,7 +27,7 @@ systemctl restart sshd
 
 # Update system
 apt update
-apt full-upgrade -y
+#apt full-upgrade -y
 
 # Install extra packages
 apt install zip unzip -y

@@ -9,7 +9,7 @@ This will create a droplet with a static IP and a network firewall with an ssh i
 - root login
 - x11 forwarding
 
-The default SSH port is also changed, and the OS packages should be fully up to date. Everything is variable-ized so feel free to change anything you want.  The cloud-init.yml file can be expanded quite a lot (for example, add as many packages as you want below the `packages:` line).
+The default SSH port is also changed, and the OS packages should be fully up to date. Everything is variable-ized so feel free to change anything you want.  The `cloud-init.sh` file can be expanded quite a lot (for example, add as many packages as you want below the `packages:` line).
 
 I intentionally chose the cheapest droplet ($5/month) as a starting point, feel free to change the droplet size to whatever you want (see Helpful Stuff at the bottom).
 
@@ -27,7 +27,7 @@ I intentionally chose the cheapest droplet ($5/month) as a starting point, feel 
 1. Clone repo, and `cd` into the directory:
 
     `cd simple-vm-tf`
-4. Change variables as needed in `variables.tf` and `cloud-init.yml`
+4. Change variables as needed in `variables.tf` and `cloud-init.sh`
 5. Set a local environment variable for your DO PAT:
 
     `export TF_VAR_do_pat=<PASTE PAT HERE>`

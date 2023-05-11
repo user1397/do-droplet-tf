@@ -35,7 +35,7 @@ resource "digitalocean_droplet" "droplet" {
   ssh_keys  = [ digitalocean_ssh_key.ssh_key.fingerprint ]
 }
 
-resource "digitalocean_floating_ip" "floating_ip" {
+resource "digitalocean_reserved_ip" "reserved_ip" {
   droplet_id = digitalocean_droplet.droplet.id
   region     = var.droplet_region
 }
@@ -65,6 +65,10 @@ resource "digitalocean_firewall" "firewall" {
   outbound_rule {
     protocol              = "udp"
     port_range            = "1-65535"
+    destination_addresses = [ "0.0.0.0/0"]
+  }
+  outbound_rule {
+    protocol              = "icmp"
     destination_addresses = [ "0.0.0.0/0"]
   }
 }

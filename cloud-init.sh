@@ -7,7 +7,7 @@ useradd -m $SUDO_USER -s /bin/bash
 echo "${SUDO_USER} ALL=(ALL) NOPASSWD:ALL" > /etc/sudoers.d/$SUDO_USER
 chmod 440 /etc/sudoers.d/$SUDO_USER
 mkdir -p /home/$SUDO_USER/.ssh
-cp /root/.ssh/authorized_keys /home/$SUDO_USER/.ssh/
+mv /root/.ssh/authorized_keys /home/$SUDO_USER/.ssh/
 chown -R $SUDO_USER:$SUDO_USER /home/$SUDO_USER/.ssh
 
 sed -i "s/#Port 22/Port ${SSH_PORT}/g" /etc/ssh/sshd_config

@@ -40,14 +40,14 @@ I intentionally chose the cheapest droplet ($5/month) as a starting point, feel 
 11. If plan was successful, run:
 
     `terraform apply # enter yes to confirm`
-13. Log into the [DO web console](https://cloud.digitalocean.com), and copy the floating IP located in Networking > Floating IP
+13. Log into the [DO web console](https://cloud.digitalocean.com), and copy the reserved IP located in Networking > Reserved IPs
 14. Connect to the instance (change values as needed):
 
 ```
-ssh -p <SSH PORT> <USERNAME>@<FLOATING IP>
+ssh -p <SSH PORT> <USERNAME>@<RESERVED IP>
 
 # e.g. given the defaults in the scripts:
-ssh -p 55022 yoloadmin@<FLOATING IP>
+ssh -p 55022 yoloadmin@<RESERVED IP>
 ```
 
    Note: It might take a couple minutes for everything to be provisioned and cloud-init to complete all its tasks.
@@ -71,7 +71,7 @@ On your local machine, create a new file in this location:
 And paste the following (change values as needed):
 ```
 Host do
-  HostName <FLOATING IP>
+  HostName <RESERVED IP>
   User <USERNAME>
   Port <SSH PORT>
   IdentityFile /path/to/private/ssh/key

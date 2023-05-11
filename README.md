@@ -26,7 +26,7 @@ I intentionally chose the cheapest droplet ($5/month) as a starting point, feel 
 
 1. Clone repo, and `cd` into the directory:
 
-    `cd dev-sandbox-starter-pack`
+    `cd simple-vm-tf`
 4. Change variables as needed in `variables.tf` and `cloud-init.yml`
 5. Set a local environment variable for your DO PAT:
 

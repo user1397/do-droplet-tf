@@ -10,7 +10,7 @@ variable "project_name" {
 
 variable "project_environment" {
   type        = string
-  default     = "dev"
+  default     = "development"
 }
 
 variable "project_purpose" {

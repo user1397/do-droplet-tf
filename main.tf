@@ -31,7 +31,7 @@ resource "digitalocean_droplet" "droplet" {
   region    = var.droplet_region
   size      = var.droplet_size
   image     = var.droplet_image
-  user_data = file("cloud-init.yml")
+  user_data = file("cloud-init.sh")
   ssh_keys  = [ digitalocean_ssh_key.ssh_key.fingerprint ]
 }
 

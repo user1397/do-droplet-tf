@@ -47,7 +47,7 @@ I intentionally chose the cheapest droplet ($5/month) as a starting point, feel 
 ssh -p <SSH PORT> <USERNAME>@<FLOATING IP>
 
 # e.g. given the defaults in the scripts:
-ssh -p 55022 adminuser@<FLOATING IP>
+ssh -p 55022 yoloadmin@<FLOATING IP>
 ```
 
    Note: It might take a couple minutes for everything to be provisioned and cloud-init to complete all its tasks.

@@ -1,6 +1,13 @@
-#!/bin/bash
+#!/usr/bin/env bash
 
 # Note: This has only been tested on Ubuntu/Debian
+
+# Update system
+apt update
+apt full-upgrade -y
+
+# Install extra packages
+apt install bash-completion command-not-found -y
 
 # Set vars
 # Note: Change ssh port number as desired. If you change it here,
@@ -24,10 +31,3 @@ sed -i "s/PermitRootLogin yes/PermitRootLogin no/g" /etc/ssh/sshd_config
 sed -i "s/PasswordAuthentication yes/PasswordAuthentication no/g" /etc/ssh/sshd_config
 sed -i "s/X11Forwarding yes/X11Forwarding no/g" /etc/ssh/sshd_config
 systemctl restart sshd
-
-# Update system
-apt update
-#apt full-upgrade -y
-
-# Install extra packages
-apt install zip unzip -y

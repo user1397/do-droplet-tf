@@ -9,7 +9,7 @@ This will create a droplet with a static IP and a network firewall with an ssh i
 - root login
 - x11 forwarding
 
-The default SSH port is also changed, and the OS packages should be fully up to date. Everything is variable-ized so feel free to change anything you want.  The `cloud-init.sh` file can be expanded quite a lot (for example, add as many packages as you want below the `packages:` line).
+The default SSH port is also changed, and the OS packages should be fully up to date. Everything is variable-ized so feel free to change anything you want.  The `cloud-init.sh` file can be expanded quite a lot (for example, add as many packages as you want in the `apt install` line).
 
 I intentionally chose the cheapest droplet ($5/month) as a starting point, feel free to change the droplet size to whatever you want (see Helpful Stuff at the bottom).
 

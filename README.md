@@ -11,7 +11,7 @@ This will create a droplet in its own VPC with a static IP and a network firewal
 
 The default SSH port is also changed, and the OS packages should be fully up to date. Everything is variable-ized so feel free to change anything you want.  The `cloud-init.sh` file can be expanded quite a lot (for example, add as many packages as you want in the `apt install` line).
 
-Note: this assumes you're going to run a Debian or Ubuntu VM. If you want to run a different distro, further changes may be needed in `cloud-init.sh` and `variables.tf`
+Note: this assumes you're going to run a Debian or Ubuntu VM. If you want to run a different distro, further changes may be needed in `cloud-init.sh` and you'll need to change the `droplet_image` var in `variables.tf`
 
 I intentionally chose the cheapest droplet ($4/month) as a starting point, feel free to change the droplet size to whatever you want (see Helpful Stuff at the bottom).
 

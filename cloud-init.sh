@@ -1,17 +1,17 @@
 #!/usr/bin/env bash
 
-# Note: This has only been tested on Ubuntu/Debian
-
 # Update system
 export DEBIAN_FRONTEND=noninteractive
 apt-get update
 apt-get purge apt-listchanges -y
+apt-get autoremove -y
 apt-get dist-upgrade -yq
 apt-get autoremove -y
 apt-get clean
 
 # Install packages
-apt install command-not-found -y
+apt-get install command-not-found -y
+apt-get update
 
 # Set vars
 # Note: Change ssh port number as desired. If you change it here,

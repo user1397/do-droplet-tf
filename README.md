@@ -1,15 +1,17 @@
 # simple-vm-tf
 
-"As a developer, I want to be able to quickly stand up and tear down a Linux server with some sane defaults/basic security so that I can have a reasonably secure sandbox to play around in and get on with my projects."
+"As a developer, I want to quickly stand up and tear down a Linux server with some sane defaults so I can have a reasonably secure sandbox to play around in and get on with my projects."
 
-Deploy a [DigitalOcean](https://www.digitalocean.com/) droplet (Linux server) with some basic security using terraform and cloud-init.
+Deploy a [DigitalOcean](https://www.digitalocean.com/) droplet (Linux VM) with some basic security using terraform and cloud-init.
 
-This will create a droplet with a static IP and a network firewall with an ssh inbound rule tied to your local public IP.  The droplet will also have a passwordless sudo user, and the following will be disabled:
+This will create a droplet in its own VPC with a static IP and a network firewall with an ssh inbound rule tied to your local public IP.  The droplet will also have a passwordless sudo user, and the following will be disabled:
 - password auth
 - root login
 - x11 forwarding
 
 The default SSH port is also changed, and the OS packages should be fully up to date. Everything is variable-ized so feel free to change anything you want.  The `cloud-init.sh` file can be expanded quite a lot (for example, add as many packages as you want in the `apt install` line).
+
+Note: this assumes you're going to run a Debian or Ubuntu VM. If you want to run a different distro, further changes may be needed in the `cloud-init.sh`
 
 I intentionally chose the cheapest droplet ($4/month) as a starting point, feel free to change the droplet size to whatever you want (see Helpful Stuff at the bottom).
 

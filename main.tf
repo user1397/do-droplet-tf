@@ -1,11 +1,11 @@
 terraform {
 
-  required_version = ">= 1.1.4"
+  required_version = ">= 1.4.6"
 
   required_providers {
     digitalocean = {
       source = "digitalocean/digitalocean"
-      version = ">= 2.16.0"
+      version = ">= 2.28.1"
     }
   }
 }
@@ -26,13 +26,21 @@ resource "digitalocean_ssh_key" "ssh_key" {
   public_key = file(var.ssh_key_path)
 }
 
+resource "digitalocean_vpc" "vpc" {
+  name     = var.vpc_name
+  region   = var.droplet_region
+  ip_range = var.vpc_iprange
+}
+
 resource "digitalocean_droplet" "droplet" {
-  name      = var.droplet_name
-  region    = var.droplet_region
-  size      = var.droplet_size
-  image     = var.droplet_image
-  user_data = file("cloud-init.sh")
-  ssh_keys  = [ digitalocean_ssh_key.ssh_key.fingerprint ]
+  name       = var.droplet_name
+  region     = var.droplet_region
+  size       = var.droplet_size
+  image      = var.droplet_image
+  monitoring = true
+  vpc_uuid   = digitalocean_vpc.vpc.id
+  user_data  = file("cloud-init.sh")
+  ssh_keys   = [ digitalocean_ssh_key.ssh_key.fingerprint ]
 }
 
 resource "digitalocean_reserved_ip" "reserved_ip" {

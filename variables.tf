@@ -17,9 +17,19 @@ variable "project_purpose" {
   default = "sandbox"
 }
 
+variable "vpc_name" {
+  type    = string
+  default = "simple-vm-tf-vpc"
+}
+
+variable "vpc_iprange" {
+  type    = string
+  default = "10.10.10.0/28"
+}
+
 variable "droplet_name" {
   type    = string
-  default = "simple-vm-tf-droplet1"
+  default = "simple-vm-tf-droplet"
 }
 
 variable "droplet_region" {

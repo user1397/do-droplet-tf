@@ -3,10 +3,12 @@
 # Note: This has only been tested on Ubuntu/Debian
 
 # Update system
-apt update
-apt full-upgrade -y
-apt autoremove -y
-apt autoclean
+export DEBIAN_FRONTEND=noninteractive
+apt-get update
+apt-get purge apt-listchanges -y
+apt-get dist-upgrade -yq
+apt-get autoremove -y
+apt-get clean
 
 # Install packages
 apt install command-not-found -y

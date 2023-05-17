@@ -5,9 +5,11 @@
 # Update system
 apt update
 apt full-upgrade -y
+apt autoremove -y
+apt autoclean
 
-# Install extra packages
-apt install bash-completion command-not-found -y
+# Install packages
+apt install command-not-found -y
 
 # Set vars
 # Note: Change ssh port number as desired. If you change it here,

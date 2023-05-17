@@ -24,7 +24,7 @@ variable "vpc_name" {
 
 variable "vpc_iprange" {
   type    = string
-  default = "10.10.10.0/28"
+  default = "10.20.30.0/28"
 }
 
 variable "droplet_name" {

@@ -29,7 +29,7 @@ I intentionally chose the cheapest droplet ($4/month) as a starting point, feel 
 4. Initialize terraform `terraform init`
 5. Run the plan `terraform plan`
 6. Create all resources `terraform apply # enter yes to confirm`
-7. Log into the [DO web console](https://cloud.digitalocean.com), and copy the reserved IP located in Networking > Reserved IPs
+7. Log into the [DO web console](https://cloud.digitalocean.com), and copy the reserved IP located in Networking > Reserved IPs (alternatively, if you've installed [doctl](https://docs.digitalocean.com/reference/doctl/how-to/install/) you can run `doctl compute reserved-ip list` to grab the reserved IP)
 8. Connect to the instance (change values as needed)
 ```
 ssh -p <SSH PORT> <USERNAME>@<RESERVED IP>

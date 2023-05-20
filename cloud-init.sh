@@ -14,8 +14,8 @@ apt-get install command-not-found -y
 apt-get update
 
 # Set vars
-# Note: Change ssh port number as desired. If you change it here,
-# you'll also have to change it in variables.tf
+# If you change the ssh port here, you'll
+# also have to change it in variables.tf
 SUDO_USER=yoloadmin
 SSH_PORT=55022
 

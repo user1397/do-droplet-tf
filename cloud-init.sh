@@ -10,7 +10,7 @@ apt-get autoremove -y
 apt-get clean
 
 # Install packages
-apt-get install command-not-found -y
+apt-get install git docker.io -y
 apt-get update
 
 # Set vars

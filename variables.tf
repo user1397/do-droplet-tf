@@ -44,7 +44,7 @@ variable "droplet_size" {
 
 variable "droplet_image" {
   type    = string
-  default = "debian-11-x64"
+  default = "ubuntu-22-04-x64"
 }
 
 variable "ssh_key_name" {

@@ -23,7 +23,7 @@ I intentionally chose the cheapest droplet ($4/month) as a starting point, feel 
 
 ## How to Deploy
 
-1. Clone repo, and go into directory `cd simple-vm-tf`
+1. Clone repo, and go into directory `cd do-droplet-tf`
 2. Change variables as needed in `variables.tf` and `cloud-init.sh`
 3. Set a local environment variable for your DO PAT (optional) `export TF_VAR_do_pat=<PASTE PAT HERE>`
 4. Initialize terraform `terraform init`
